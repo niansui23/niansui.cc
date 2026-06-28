@@ -29,6 +29,8 @@ const newsItems = [
 ]
 
 const path = window.location.pathname
+const heroPoster = '/tian-xiwei-bg.png'
+const heroVideo = '/tian-xiwei-bg-video.mp4'
 
 function updateMotion(event: PointerEvent<HTMLElement>) {
   const x = event.clientX / window.innerWidth - 0.5
@@ -89,6 +91,12 @@ function Header() {
 function Hero() {
   return (
     <section className="hero-section">
+      <div className="hero-video-layer" aria-hidden="true">
+        <video autoPlay loop muted playsInline preload="auto" poster={heroPoster}>
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="hero-video-vignette" />
+      </div>
       <div className="hero-copy">
         <p className="eyebrow">China Unicom Tibet</p>
         <h1>
